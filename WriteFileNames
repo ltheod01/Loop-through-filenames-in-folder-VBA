@@ -1,0 +1,22 @@
+Sub LoopThroughFiles()
+  
+  Dim FileName As String
+  
+  i = 1
+  
+  ' Set the file path and pattern
+  FileName = Dir("C:\folder\path\*.xlsx",vbDirectory)
+  
+  ' Loop through all the files in the folder
+  Do While Len(FileName) <> "" 
+    
+    ActiveSheet.Cells(i,1).Value = FileName
+    
+    i = i + 1
+    
+    ' Get the next file name
+    FileName = Dir()
+    
+  Loop
+
+End Sub
